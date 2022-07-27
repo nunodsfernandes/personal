@@ -1,12 +1,7 @@
 hostnamectl set-hostname nx-centurion
 yum update -y
 
-firewall-cmd --permanent --zone=public --add-service=cockpit
-firewall-cmd --add-port=3389/tcp --permanent
-firewall-cmd --reload
-
 yum group install -y "Virtualization Host" "Server with GUI"
-
 yum install -y epel-release
 yum install -y cockpit
 yum install -y cockpit-machines
@@ -27,5 +22,9 @@ systemctl enable --now xrdp
 
 set-default graphical.target
 systemctl isolate graphical.target
+
+firewall-cmd --permanent --zone=public --add-service=cockpit
+firewall-cmd --add-port=3389/tcp --permanent
+firewall-cmd --reload
 
 reboot now
