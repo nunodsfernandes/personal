@@ -5,7 +5,9 @@ sudo yum install -y open-vm-tools
 sudo systemctl enable --now vmtoolsd
 yum install wget unzip -y
 sudo yum install -y epel-release
-
+curl -fsSL https://get.docker.com -o install-docker.sh
+sh install-docker.sh
+systemctl enable --now docker
 
 exit
 
