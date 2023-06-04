@@ -3,9 +3,12 @@
 sudo yum update -y
 sudo yum install -y open-vm-tools
 sudo systemctl enable --now vmtoolsd
-
 yum install wget unzip -y
 sudo yum install -y epel-release
+
+
+exit
+
 sudo yum groupinstall -y 'development tools'
 
 sudo yum install -y python-pip python-devel
